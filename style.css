@@ -1,0 +1,10 @@
+.display-4 {
+    text-align: center;
+}
+
+.card-container {
+    border: 2px solid red;
+    width: 1000px;
+    height: 500px;
+    margin-left: 11.5%;
+}
