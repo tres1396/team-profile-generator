@@ -1,10 +1,10 @@
 // requirements
-const fs = require("fs");
 const inquirer = require("inquirer");
-const Employee = require("./employee");
-const Intern = require("./intern");
-const Manager = require("./manager");
-const Engineer = require("./engineer")
+const fs = require("fs");
+const Employee = require("./lib/Employee.js");
+const Intern = require("./lib/Intern.js");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
 
 // Array to be filled with team members
 let teamMembers = [];
@@ -158,7 +158,8 @@ function addTeamMember() {
 // create HTML if all team members have been added
 
 function createHTML() {
-    let htmlPage = [];
+
+    let fullHtml = [];
 
     const renderHTML =
         `<!DOCTYPE html>
@@ -167,17 +168,19 @@ function createHTML() {
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <title>Team Generator</title>
     </head>
     <body>
     <div class="page-header">
-    <h1>My Team</h1>
+    <h1>My Team 😁</h1>
     </div>
     </body>
     </html>
     `;
 
-    htmlPage.push(renderHTML);
+    fullHtml.push(renderHTML);
     // iterate through team members to make cards
     for (i = 0; i < teamMembers.length; i++) {
         let addToHTML = ``;
@@ -217,17 +220,16 @@ function createHTML() {
         </div>
             `;
         }
-        htmlPage.push(addToHTML);
+        fullHtml.push(addToHTML);
 };
 }
 
 const htmlEnding = `
 </body>
-</html>
-`;
+</html>`;
 
-htmlPage.push(htmlEnding);
+fullHtml.push(htmlEnding);
 
-fs.writeFile("index.html", htmlPage.join(""))
+fs.writeFile("index.html", fullHtml.join(""));
 
 managerCard();
