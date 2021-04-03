@@ -179,7 +179,7 @@ function createHTML() {
 
     htmlPage.push(renderHTML);
     // iterate through team members to make cards
-    for (i = 0, i < teamMembers.length, i++) {
+    for (i = 0; i < teamMembers.length; i++) {
         let addToHTML = ``;
 
         if (teamMembers[i].role == "Manager") {
@@ -221,4 +221,13 @@ function createHTML() {
 };
 }
 
+const htmlEnding = `
+</body>
+</html>
+`;
 
+htmlPage.push(htmlEnding);
+
+fs.writeFile("index.html", htmlPage.join(""))
+
+managerCard();
