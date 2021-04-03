@@ -159,45 +159,20 @@ function addTeamMember() {
 
 function createHTML() {
     let htmlPage = [];
-    
-}
 
-
-// classes
-    .then(answers => {
-    fs.writeFile('./answers.json', JSON.stringify(answers), () => { });
-    console.log(answers);
-
-    const HTML = `<!DOCTYPE html>
-           <html lang="en">
-           <head>
-               <meta charset="UTF-8">
-               <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-               <link rel="stylesheet" href="style.css">
-               <title>Team Generator</title>
-           </head>
-           <body>
-               <!--Header-->
-               <div class="jumbotron container">
-                   <h1 class="display-4">My Team ☺</h1>
-                 </div>
-               
-           <!--Card Container-->
-               <div class="card-container d-flex flex-row">
-                   <div class="card" style="width: 18rem;">
-                       <div class="card-body">
-                         <h5 class="card-title">${answers.teammember}</h5>
-                         <h6 class="card-title">${answers.position}</h6>
-                       
-                       <ul class="list-group list-group-flush">
-                         <li class="list-group-item">Employee ID #</li>
-                         <li class="list-group-item">Employee Email</li>
-                         <li class="list-group-item">Office #, github, or school</li>
-                       </ul>
-                       </div>
-                     </div>
-               </div>
-               <script src="script.js"></script>
+    const renderHTML =
+        `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Team Generator</title>
+    </head>
+    <body>
+    <div class="page-header">
+    <h1>My Team</h1>
+    </div>
            </body>
            </html>`
 
