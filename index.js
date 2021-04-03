@@ -173,9 +173,52 @@ function createHTML() {
     <div class="page-header">
     <h1>My Team</h1>
     </div>
-           </body>
-           </html>`
+    </body>
+    </html>
+    `;
+
+    htmlPage.push(renderHTML);
+    // iterate through team members to make cards
+    for (i = 0, i < teamMembers.length, i++) {
+        let addToHTML = ``;
+
+        if (teamMembers[i].role == "Manager") {
+            addToHTML += `
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">Role: ${teamMembers[i].role}</div>
+      <p>Name: ${teamMembers[i].name}</p>
+      <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
+      <p>Id: ${myTeam[i].id}</p>
+      <p>Office Number: ${teamMembers[i].office}</p>
+    </div>
+    `;
+        }
+
+        if (teamMembers[i].role == "Intern") {
+            addToHTML += `
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Role: ${teamMembers[i].role}</div>
+            <p>Name: ${teamMembers[i].name}</p>
+            <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
+            <p>Id: ${teamMembers[i].id}</p>
+            <p>School: ${teamMembers[i].school}</p>
+        </div>
+        `;
+        }
+
+        if (teamMembers[i].role == "Engineer") {
+            addToHTML += `
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Role: ${teamMembers[i].role}</div>
+            <p>Name: ${teamMembers[i].name}</p>
+            <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
+            <p>Id: ${teamMembers[i].id}</p>
+            <p>GitHub: <a href="https://github.com/${teamMembers[i].github}" target="_blank">${teamMembers[i].github}</a></p>
+        </div>
+            `;
+        }
+        htmlPage.push(addToHTML);
+};
+}
 
 
-    fs.appendFile("./index.html", HTML, () => { });
-});
