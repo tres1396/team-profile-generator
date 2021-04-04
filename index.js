@@ -187,7 +187,7 @@ function createHTML() {
 
         if (teamMembers[i].role == "Manager") {
             addToHTML += `
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card bg-info mb-3" style="max-width: 18rem;">
     <div class="card-header">Role: ${teamMembers[i].role}</div>
       <p>Name: ${teamMembers[i].name}</p>
       <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
@@ -199,7 +199,7 @@ function createHTML() {
 
         if (teamMembers[i].role == "Intern") {
             addToHTML += `
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card bg-warning mb-3" style="max-width: 18rem;">
           <div class="card-header">Role: ${teamMembers[i].role}</div>
             <p>Name: ${teamMembers[i].name}</p>
             <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
@@ -211,7 +211,7 @@ function createHTML() {
 
         if (teamMembers[i].role == "Engineer") {
             addToHTML += `
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card bg-danger mb-3" style="max-width: 18rem;">
           <div class="card-header">Role: ${teamMembers[i].role}</div>
             <p>Name: ${teamMembers[i].name}</p>
             <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
