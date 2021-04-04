@@ -191,7 +191,7 @@ function createHTML() {
     <div class="card-header">Role: ${teamMembers[i].role}</div>
       <p>Name: ${teamMembers[i].name}</p>
       <p>Email: <a href="mailto:${teamMembers[i].email}" target="_blank">${teamMembers[i].email}</a></p>
-      <p>Id: ${myTeam[i].id}</p>
+      <p>Id: ${teamMembers[i].id}</p>
       <p>Office Number: ${teamMembers[i].office}</p>
     </div>
     `;
@@ -221,15 +221,17 @@ function createHTML() {
             `;
         }
         fullHtml.push(addToHTML);
-};
-}
+    };
 
-const htmlEnding = `
+
+    const htmlEnding = `
 </body>
 </html>`;
 
-fullHtml.push(htmlEnding);
+    fullHtml.push(htmlEnding);
 
-fs.writeFile("index.html", fullHtml.join(""));
+    fs.writeFile("index.html", fullHtml.join(""), (err) =>
+    err ? console.log(err) : console.log("Finished!")
+    )}
 
 managerCard();
